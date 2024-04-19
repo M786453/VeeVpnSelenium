@@ -1,6 +1,6 @@
 # VeeVpnSelenium
 
-This is a python module which provides the ability to use Vee Vpn with selenium web driver.
+This is a python module which provides the ability to use Vee Vpn Extension with selenium web driver.
 
 ## Features
 
