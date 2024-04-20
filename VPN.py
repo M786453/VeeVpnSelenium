@@ -8,8 +8,6 @@ class VPN:
 
         self._setup_driver()
 
-        # self._close_unnecessary_tab()
-
         time.sleep(10)
 
         self._load_extension_page()
@@ -31,18 +29,6 @@ class VPN:
 
         self.driver = webdriver.Chrome(options=options)
 
-    def _close_unnecessary_tab(self):
-
-        # An unnecessary tab opens up when browser start. Close it.
-
-        time.sleep(5) # Wait for tab to open up
-
-        self.driver.switch_to.window(self.driver.window_handles[1]) # Switch to the new tab
-
-        self.driver.close() # Close the tab
-
-        self.driver.switch_to.window(self.driver.window_handles[0]) # Switch to old tab
-
     def _load_extension_page(self):
 
         self.driver.switch_to.window(self.driver.window_handles[1]) # Switch to the new tab
@@ -50,10 +36,6 @@ class VPN:
         extension_url = 'chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/html/foreground.html'
 
         self.driver.get(extension_url)
-
-        # self.driver.execute_script(f"window.open('{extension_url}');") # Open Extension in new tab
-
-        # self.driver.switch_to.window(self.driver.window_handles[1]) # Switch window to new tab
 
         time.sleep(5)
 
